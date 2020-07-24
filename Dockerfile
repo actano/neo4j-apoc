@@ -11,6 +11,7 @@ RUN wget https://github.com/neo4j-contrib/neo4j-streams/releases/download/${STRE
 FROM neo4j:3.4.5-enterprise as neo4j
 
 ARG APOC_VERSION=3.4.0.4
+ARG STREAMS_VERSION=3.4.4
 
 COPY --from=download /tmp/apoc-${APOC_VERSION}-all.jar /plugins/apoc-${APOC_VERSION}-all.jar
 COPY --from=download /tmp/neo4j-streams-${STREAMS_VERSION}.jar /plugins/neo4j-streams-${STREAMS_VERSION}.jar
